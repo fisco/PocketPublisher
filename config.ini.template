@@ -1,0 +1,42 @@
+[Authentication]
+; This section is REQUIRED.
+; The values "consumer key" and "access token" are REQUIRED.
+; For information on obtaining the consumer key and access token for your Pocket account, see URL TO COME
+consumer key = 
+access token = 
+
+[Output Files to Tags Array Mapping]
+; This section is REQUIRED.
+; It MUST contain at least one entry of the form "output_file_name: [list_of_tags]". Example:
+; file.html: ['tag one', 'tag two']
+; All items tagged with one or more of the strings in the list of tags will be listed in the given output file.
+; The file name must be suitable for your operating system.
+; The list of tags is a list of strings and must contain one or more tags.
+
+;[Pre-HTML Files]
+; This section is OPTIONAL.
+; It defines a file (that must exist in the PocketPublisher program directory) that is prepended to a given output file, before the Pocket entry payload.
+; Entries are of the form "output_file_name: file_name"
+; Any output file entries in this section that are not listed in [Output Files to Tags Array Mapping] will be ignored.
+
+;[Post-HTML Files]
+; This section is OPTIONAL.
+; It defines a file (that must exist in the PocketPublisher program directory) that is appended to a given output file, after the Pocket entry payload.
+; Entries are of the form "output_file_name: file_name"
+; Any output file entries in this section that are not listed in [Output Files to Tags Array Mapping] will be ignored.
+
+;[Since Parameters]
+; This section is OPTIONAL.
+; It is used to override the default "since" setting for output files on a per-file basis.
+; The "since" setting determines the date from which Pocket items are included in the output file.
+; The default setting is one year.
+; Entries are of the form "output_file_name: unix_timestamp"
+; Any output file entries in this section that are not listed in [Output Files to Tags Array Mapping] will be ignored.
+
+;[Pocket Tags]
+; This section is OPTIONAL.
+; The default values are listed below.
+; The "pocket do no publish" tag is a Pocket tag that prevents PocketPublisher from including the tagged item in the output files.
+; The "pocket delete tag" is a Pocket tag that tells PocketPublisher to remove the item from your Pocket account once the item has been stored in the local PocketPublisher database.
+;do not publish tag = pp: do not publish
+;delete tag = pp: delete
