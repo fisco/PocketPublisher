@@ -32,6 +32,8 @@ import time
 import urllib.parse
 import urllib.request
 
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 # Handle items in configuration file:
@@ -159,8 +161,7 @@ conn.close()
 
 if not (os.path.isdir('_files')):
     os.makedirs('_files')
-os.chdir('_files')
 for page in tags_to_file_mappings:
-    f = open(page['file_name'],"w")
+    f = open(('_files/' + page['file_name']), "w")
     f.write(page['pre_html_file'] + page['html'] + page['post_html_file'])
     f.close()
